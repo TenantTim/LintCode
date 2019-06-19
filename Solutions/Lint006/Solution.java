@@ -5,33 +5,26 @@ public class Solution {
      * @return: A new sorted integer array
      */
     public int[] mergeSortedArray(int[] A, int[] B) {
-
         int lengthA = A.length, lengthB = B.length;
         int result[] = new int[lengthA + lengthB];
 
         int i = 0, j = 0, p = 0;
-        while(p < result.length)
-        {
+        while(p < result.length) {
             int input = 0;
-            if(i == lengthA)
-            {
+            if(i == lengthA) {
                 input = B[j];
                 j++;
             }
-            else if(j == lengthB)
-            {
+            else if(j == lengthB) {
                 input = A[i];
                 i++;
             }
-            else
-            {
-                if(A[i] < B[j])
-                {
+            else {
+                if(A[i] < B[j]) {
                     input = A[i];
                     i++;
                 }
-                else
-                {
+                else {
                     input = B[j];
                     j++;
                 }
