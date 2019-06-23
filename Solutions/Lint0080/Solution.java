@@ -35,21 +35,21 @@ public class Solution {
 
     private int partition(int[] nums, int startIndex, int endIndex) {
         int pivot = nums[endIndex];
-        int i = startIndex - 1;
+        int i = startIndex;
         
         for(int j = startIndex; j < endIndex; j++) {
             if(nums[j] <= pivot) {
-                i++;
                 int temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
+                i++;
             }
         }
 
-        int temp = nums[i + 1];
-        nums[i + 1] = nums[endIndex];
+        int temp = nums[i];
+        nums[i] = nums[endIndex];
         nums[endIndex] = temp;
 
-        return i + 1;
+        return i;
     }
 }
